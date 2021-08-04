@@ -1,38 +1,98 @@
-.App {
+body {
+  background-color: rgb(197, 197, 197);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+.budget {
+  display: flex;
+  justify-content: center;
+}
+.balance,
+.income,
+.expence {
+  border-radius: 35px;
+  background: #c5c5c5;
+  box-shadow: 11px 11px 37px #949494, -11px -11px 37px #f6f6f6;
+  padding: 10px;
+  margin-left: 25px;
   text-align: center;
+  font-weight: bold;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.income {
+  background-color: rgba(0, 179, 0, 0.465);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.expence {
+  background-color: rgba(179, 0, 0, 0.465);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.budget-amount {
+  font-size: 23px;
+}
+.listTransaction h3,
+.addTransaction h3 {
+  margin-left: 10%;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.transaction-item {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 35px;
+  background: #c5c5c5;
+  box-shadow: 11px 11px 37px #949494, -11px -11px 37px #f6f6f6;
+  font-size: 23px;
+}
+.plus-transaction {
+  border-left: 10px solid rgb(5, 143, 0);
+  border-right: 10px solid rgb(5, 143, 0);
+}
+.minus-transaction {
+  border-left: 10px solid red;
+  border-right: 10px solid red;
+}
+.transaction-item p {
+  padding-top: 10px;
+}
+.fa-trash{
+  position: absolute;
+  top: 25%;
+  right: 6%;
+  cursor: pointer;
+}
+.fa-trash:hover{
+  color: rgb(156, 0, 0);
+}
+.transaction-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.transaction-form input {
+  margin: 8px 0;
+  width: 80%;
+  height: 50px;
+  border-radius: 36px;
+  background: #c5c5c5;
+  box-shadow: inset 11px 11px 37px #949494, inset -11px -11px 37px #f6f6f6;
+  outline: none;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.transaction-form input:enabled {
+  padding-left: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transaction-form button {
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 36px;
+  color: #fff;
+  background: rgb(38, 88, 255);
+  box-shadow: 11px 11px 37px #949494, -11px -11px 37px #f6f6f6;
+  outline: none;
+  border: none;
+}
+.transaction-form button:hover {
+  background: rgb(48, 87, 214);
 }
