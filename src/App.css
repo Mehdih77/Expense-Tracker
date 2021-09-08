@@ -36,7 +36,7 @@ body {
 .transaction-item {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   border-radius: 35px;
   background: #c5c5c5;
   box-shadow: 11px 11px 37px #949494, -11px -11px 37px #f6f6f6;
@@ -53,14 +53,18 @@ body {
 .transaction-item p {
   padding-top: 10px;
 }
-.fa-trash{
-  position: absolute;
-  top: 25%;
-  right: 6%;
+.transaction-icons{
+  padding-top: 10px;
+}
+.transaction-icons i{
+  padding-right: 12px;
   cursor: pointer;
 }
 .fa-trash:hover{
   color: rgb(156, 0, 0);
+}
+.fa-edit:hover{
+  color: rgb(11, 86, 184);
 }
 .transaction-form {
   display: flex;

@@ -5,12 +5,12 @@ function Budget() {
 
     const {transaction} = useAuthState();
 
-    const amounts = transaction.map(transaction => transaction.amount);
+    const amounts = transaction && transaction.map(trans => trans.amount);
 
-    const incomeBudget = amounts.filter(item => item > 0)
+    const incomeBudget = amounts && amounts.filter(item => item > 0)
     .reduce((acc,curr) => acc += Number(curr) , 0);
 
-    const expenceBudget = amounts.filter(item => item < 0)
+    const expenceBudget = amounts && amounts.filter(item => item < 0)
     .reduce((acc,curr) => acc += Number(curr) * -1 , 0)
 
     const balanceBudget = incomeBudget - expenceBudget;

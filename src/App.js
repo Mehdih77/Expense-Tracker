@@ -1,6 +1,6 @@
 import './App.css';
-import AddTransaction from './components/AddTransaction';
 import Budget from './components/Budget';
+import CrudTransaction from './components/CrudTransaction';
 import ListTransaction from './components/ListTransaction';
 import AuthContext from './Context/AuthContext';
 
@@ -13,7 +13,7 @@ function App() {
                     <AuthContext>
                         <Budget/>
                         <ListTransaction/>
-                        <AddTransaction/>
+                        <CrudTransaction /> 
                     </AuthContext>
                 </div>
             </div>

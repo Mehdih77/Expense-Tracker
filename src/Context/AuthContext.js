@@ -22,7 +22,7 @@ export function useAuthDispatch() {
 function AuthContext({children}) {
 
     const [state, dispatch] = useReducer(reducer, initialState);
-
+    
     return (
         <AuthStateContext.Provider value={state}>
             <AuthDispatchContext.Provider value={dispatch}>
