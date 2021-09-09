@@ -5,8 +5,13 @@ export default function UpdateTransaction() {
 
     const dispatch = useAuthDispatch();
     const { currentTransaction } = useAuthState();
-
     const [newTransaction, setNewTransaction] = useState(currentTransaction);
+    const [error, setError] = useState(false);
+
+    const cancelTransaction = (e) => {
+        e.preventDefault();
+        setNewTransaction(currentTransaction);
+    }
 
     useEffect(() => {
         setNewTransaction(currentTransaction)
@@ -21,6 +26,10 @@ export default function UpdateTransaction() {
 
     const handleUpdateTransaction = (e) => {
         e.preventDefault();
+        if (!newTransaction.name || !newTransaction.amount) {
+            setError(true);
+            return;
+        }
         dispatch({
             type: "UPDATE_TRANSACTION",
             payload: {
@@ -28,17 +37,19 @@ export default function UpdateTransaction() {
                 updatedTransaction: newTransaction,
             }
         })
+        setError(false);
     }
 
     return (
         <div className='container'>
-            <div className="row addTransaction">
-                <h3>Add Your Transaction</h3>
+            <div className="row editTransaction">
+                <h3>Edit Your Transaction</h3>
+                {error && <p className='error-txt'>Please Fill All The Fields <i className="fas fa-exclamation"></i></p>}
                 <form onSubmit={handleUpdateTransaction} className='transaction-form'>
                     <input value={newTransaction.name} name='name' onChange={handleInputsChange} type="text" placeholder='Name Of Transaction...' />
                     <input value={newTransaction.amount} name='amount' onChange={handleInputsChange} type="number" placeholder='Amount Of Transaction...' />
                     <button >Update Transaction</button>
-                    <button onClick={() => {}} >Cancel Transaction</button>
+                    <button className='cancel-btn' onClick={cancelTransaction} >Cancel Transaction</button>
                 </form>
             </div>
         </div>

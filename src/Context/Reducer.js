@@ -27,8 +27,8 @@ export function reducer(state,action) {
                     ...state,
                     transaction: state.transaction.map(trans => (
                         trans.id === iddd ? updatedTransaction : trans
-                    )),
-                    editing: false
+                        )),
+                    editing: false,
                 }    
         case "EDITROW_TRANSACTION":
                 const {id, name, amount} = action.payload;

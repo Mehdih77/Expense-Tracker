@@ -3,6 +3,7 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   overflow-x: hidden;
 }
+/* Budget */
 .budget {
   display: flex;
   justify-content: center;
@@ -27,11 +28,25 @@ body {
 .budget-amount {
   font-size: 23px;
 }
+
+/* ListTransaction & AddTransaction */
 .listTransaction h3,
-.addTransaction h3 {
+.addTransaction h3, .editTransaction h3 {
   margin-left: 10%;
   margin-top: 10px;
   margin-bottom: 25px;
+}
+.addTransaction .error-txt, .editTransaction .error-txt {
+  margin-left: 12%;
+  width: 75%;
+  border-radius: 10px;
+  background-color: orangered;
+  color: #fff;
+  padding: 10px;
+}
+.fa-exclamation{
+float: right;
+padding: 5px;
 }
 .transaction-item {
   position: relative;
@@ -93,10 +108,16 @@ body {
   border-radius: 36px;
   color: #fff;
   background: rgb(38, 88, 255);
-  box-shadow: 11px 11px 37px #949494, -11px -11px 37px #f6f6f6;
   outline: none;
   border: none;
 }
 .transaction-form button:hover {
   background: rgb(48, 87, 214);
+}
+
+.cancel-btn {
+  background-color: #727272!important;
+}
+.cancel-btn:hover {
+  background-color: #7e7e7e!important;
 }
